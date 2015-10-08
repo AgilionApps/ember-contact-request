@@ -1,0 +1,36 @@
+{{#unless closed}}
+  {{#if closable}}
+    <button {{action 'close'}}>
+      {{!-- TODO add icon --}}
+      x
+    </button>
+  {{/if}}
+
+  <div>
+    <h2>
+      {{yield}}
+    </h2>
+
+    {{#if submitted}}
+      <p>
+        {{submittedText}}
+      </p>
+    {{else}}
+      <form {{action 'submit' on='submit'}}>
+        <div>
+          {{input value=phoneNumber}}
+        </div>
+        <div>
+          <button type="submit">{{buttonText}}</button>
+        </div>
+      </form>
+    {{/if}}
+
+    {{#unless mini}}
+      <div class='c--panel--description'>
+        {{contactMessage}}
+        {{contactNumber}}
+      </div>
+    {{/unless}}
+  </div>
+{{/unless}}

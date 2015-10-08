@@ -1,0 +1,1 @@
+export { default } from 'ember-contact-request/components/contact-request/component';
